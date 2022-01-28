@@ -1,0 +1,131 @@
+<div class="form__wrapper">
+    <div class="container">
+        <!-- Login Form -->
+        <div class="login-form" *ngIf="toggleForm">
+            <h2 class="title is-1 is-center">Login</h2>
+            <form [formGroup]="loginForm" (submit)="onLogin()">
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Email" formControlName="email" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check" *ngIf="loginCtrls.email.valid"></i>
+                        </span>
+                    </p>
+                    <div *ngIf="loginCtrls.email.invalid && (loginCtrls.email.dirty || loginCtrls.email.touched)">
+                        <p class="help is-danger" *ngIf="loginCtrls.email.errors?.required" >Email is required</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password" formControlName="pass" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                    <div *ngIf="loginCtrls.pass.invalid && (loginCtrls.pass.dirty || loginCtrls.pass.touched)">
+                        <p class="help is-danger" *ngIf="loginCtrls.pass.errors?.required" >Pasword is required</p>
+                    </div>
+                </div>
+                <!-- Form Actions -->
+                <div class="field">
+                    <div class="control form-actions">
+                        <button type="submit" class="button is-success" [disabled]="loginForm.invalid">Login</button>
+                        <p> Don't Have An Account? <a (click)="toggleFormAction()"> Signup </a> </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="signup-form" *ngIf="!toggleForm">
+            <h2 class="title is-1 is-center">Signup</h2>
+            <form (submit)="onSignup()" [formGroup]="signupForm">
+                <!-- First Name -->
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="First Name" formControlName="fname" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-address-card"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"  *ngIf="signupCtrls.fname.valid"></i>
+                        </span>
+                    </p>
+                    <div *ngIf="signupCtrls.fname.invalid && (signupCtrls.fname.dirty || signupCtrls.fname.touched)">
+                        <p class="help is-danger" *ngIf="signupCtrls.fname.errors?.required" >First Name is required</p>
+                    </div>
+                </div>
+
+                <!-- Last Name -->
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Last Name" formControlName="lname" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-address-card"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check" *ngIf="signupCtrls.lname.valid"></i>
+                        </span>
+                    </p>
+                    <div *ngIf="signupCtrls.lname.invalid && (signupCtrls.lname.dirty || signupCtrls.lname.touched)">
+                        <p class="help is-danger" *ngIf="signupCtrls.lname.errors?.required" >Last Name is required</p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Email" formControlName="email" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check" *ngIf="signupCtrls.email.valid"></i>
+                        </span>
+                    </p>
+                    <div *ngIf="signupCtrls.email.invalid && (signupCtrls.email.dirty || signupCtrls.email.touched)">
+                        <p class="help is-danger" *ngIf="signupCtrls.email.errors?.required" >Email is required</p>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password" formControlName="pass" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                    <div *ngIf="signupCtrls.pass.invalid && (signupCtrls.pass.dirty || signupCtrls.pass.touched)">
+                        <p class="help is-danger" *ngIf="signupCtrls.pass.errors?.required" >Password is required</p>
+                    </div>
+                </div>
+
+                <!-- confirm Password -->
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Confirm Password" formControlName="cpass" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                    <div *ngIf="signupCtrls.cpass.invalid && (signupCtrls.cpass.dirty || signupCtrls.cpass.touched)">
+                        <p class="help is-danger" *ngIf="signupCtrls.cpass.errors?.required" >Pease confirm your password</p>
+                        <p class="help is-danger" *ngIf="signupCtrls.cpass.errors?.notEquivalent" >Passwords Don't Match</p>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="field">
+                    <div class="control form-actions">
+                        <button type="submit" class="button is-success" [disabled]="signupForm.invalid">Signup</button>
+                        <p> Already Have An Account? <a (click)="toggleFormAction()"> Login </a> </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

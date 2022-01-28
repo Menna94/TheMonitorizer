@@ -1,0 +1,94 @@
+<div class="add-check__wrapper">
+    <div class="container">
+        <h1 class="title is-1 is-centered">Create A New Check</h1>
+        <form>
+            <!-- Check Name -->
+            <div class="field">
+                <label class="label">Check Name</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input is-success" type="text" placeholder="My First Check">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-file-signature"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <!-- URL -->
+            <div class="url-specs">
+                <h2 class="title is-4 is-centered">URL Information</h2>
+                <div class="field">
+                    <label class="label">URL</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input is-success" type="text" placeholder="ex: http://localhost.com">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-link"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="columns">
+                    <!-- URL specs -->
+                    <div class="field column is-one-fifth">
+                        <label class="label">Protocol</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="text">
+                        </div>
+                    </div>
+
+                    <div class="field column is-one-quarter">
+                        <label class="label">Port</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="text">
+                        </div>
+                    </div>
+
+                    <div class="field column is-half">
+                        <label class="label">Path</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="checkbox">
+                        <input type="checkbox"> &nbsp; <span class="subtitle is-5">use SSL</span> 
+                    </label>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- settings -->
+            <div class="time-settings">
+                <h2 class="title is-4 is-centered">Settings</h2>
+                <div class="field">
+                    <label class="label">Check every</label>
+                    <div class="content">
+                        <blockquote> Monitor the host and service(s) every <input class="is-small is-rounded column is-1 input is-success" type="text" placeholder="10"> minutes. </blockquote>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Timeout</label>
+                    <div class="content">
+                        <blockquote> Time before every request before it is aborted <input class="is-small is-rounded column is-1 input is-success" type="text" placeholder="5"> seconds. </blockquote>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">When a potenital problem occur</label>
+                    <div class="content">
+                        <blockquote> 
+                            Request failure threshould to create an alert <input class="is-small is-rounded column is-1 input is-success" type="text" placeholder="1"> error(s). 
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

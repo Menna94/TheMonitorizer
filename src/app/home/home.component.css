@@ -1,0 +1,10 @@
+.home__wrapper{
+    /* background-color: #86e2d4; */
+    margin: 100px auto;
+    text-align: center;
+    width: 60%;
+}
+
+button{
+    margin: 20px auto;
+}
